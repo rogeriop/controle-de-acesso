@@ -1,0 +1,19 @@
+*LEVANTA SERVIDOR HSQLDB
+cd workspaceEE\controle-de-acesso\bco
+java -cp ..\lib\hsqldb.jar org.hsqldb.server.Server --database.0 file:acesso --dbname.0 acesso
+
+*EXECUTE CLIENTE HSQLDB
+cd workspaceEE\controle-de-acesso\bco
+java -cp ..\lib\hsqldb.jar org.hsqldb.util.DatabaseManager
+
+*LIMPA TABELAS
+DELETE FROM usuario;
+DELETE FROM grupo_funcao;
+DELETE FROM grupo;
+DELETE FROM FUNCAO;
+*DROPA TABELAS
+DROP TABLE grupo_funcao;
+DROP TABLE usuario;
+DROP TABLE funcao;
+DROP TABLE grupo;
+

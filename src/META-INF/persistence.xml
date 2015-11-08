@@ -1,7 +1,7 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence   http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
 
-	<!-- unidade de persistencia com o nome financas -->
-	<persistence-unit name="acesso">
+	<!-- unidade de persistencia com o nome acesso-msql -->
+	<persistence-unit name="acesso-msql">
 
 		<!-- Implementação do JPA, no nosso caso Hibernate -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
@@ -9,6 +9,7 @@
 		<!-- Aqui são listadas todas as entidades -->
 		<class>br.com.arptec.acesso.modelo.Usuario</class>
 		<class>br.com.arptec.acesso.modelo.Grupo</class>
+		<class>br.com.arptec.acesso.modelo.Funcao</class>
 		<properties>
 
 			<!-- Propriedades JDBC -->
@@ -24,4 +25,31 @@
 			<property name="hibernate.format_sql" value="true"/>
 		</properties>
 	</persistence-unit>
+	
+	<!-- unidade de persistencia com o nome acesso-hsqldb -->
+	<persistence-unit name="acesso-hsqldb">
+
+		<!-- Implementação do JPA, no nosso caso Hibernate -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<!-- Aqui são listadas todas as entidades -->
+		<class>br.com.arptec.acesso.modelo.Usuario</class>
+		<class>br.com.arptec.acesso.modelo.Grupo</class>
+		<class>br.com.arptec.acesso.modelo.Funcao</class>
+		<properties>
+
+			<!-- Propriedades JDBC -->
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/acesso"/>
+			<property name="javax.persistence.jdbc.user" value="SA"/>
+			<property name="javax.persistence.jdbc.password" value=""/>
+
+			<!-- Configurações específicas do Hibernate -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+		</properties>
+	</persistence-unit>
+	
 </persistence>

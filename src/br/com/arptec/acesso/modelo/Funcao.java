@@ -5,15 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Funcao {
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id_funcao;
 	private String nome;
 	
-	private Grupo grupo;
-
 	public String getNome() {
 		return nome;
 	}
@@ -22,8 +21,8 @@ public class Funcao {
 		this.nome = nome;
 	}
 
-	public int getId() {
-		return id;
+	public Long getId() {
+		return id_funcao;
 	}
 
 }
