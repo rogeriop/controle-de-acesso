@@ -12,7 +12,15 @@ public class Funcao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_funcao;
 	private String nome;
-	
+
+	public Long getId_funcao() {
+		return id_funcao;
+	}
+
+	public void setId_funcao(Long id_funcao) {
+		this.id_funcao = id_funcao;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -21,8 +29,5 @@ public class Funcao {
 		this.nome = nome;
 	}
 
-	public Long getId() {
-		return id_funcao;
-	}
 
 }

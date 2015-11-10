@@ -1,6 +1,5 @@
 package br.com.arptec.acesso.modelo;
 
-import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -29,10 +28,19 @@ public class Grupo {
 	@JoinTable(
 			name="grupo_funcao",
 			joinColumns = @JoinColumn(name="id_grupo"), inverseJoinColumns = @JoinColumn(name = "id_funcao"))
-	private Collection<Funcao> funcoes;
+	private List<Funcao> funcoes;
 
-	public Long getId() {
+
+	public void setId_grupo(Long id_grupo) {
+		this.id_grupo = id_grupo;
+	}
+	
+	public Long getId_grupo() {
 		return id_grupo;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	public String getNome() {
@@ -47,11 +55,11 @@ public class Grupo {
 		return usuarios;
 	}
 	
-	public Collection<Funcao> getFuncoes() {
+	public List<Funcao> getFuncoes() {
 		return funcoes;
 	}
 	
-	public void setFuncoes(Collection<Funcao> funcoes) {
+	public void setFuncoes(List<Funcao> funcoes) {
 		this.funcoes = funcoes;
 		
 	}

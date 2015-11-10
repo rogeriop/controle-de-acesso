@@ -1,7 +1,7 @@
 package br.com.arptec.acesso.util;
 
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -55,11 +55,11 @@ public class PopulaBanco {
 		manager.persist(usuario4);
 		
 		// Atribui Funcão a Grupo
-		Collection<Funcao> funcoesAdministrador = Arrays.asList(funcao1, funcao2, funcao3, funcao4);
+		List<Funcao> funcoesAdministrador = Arrays.asList(funcao1, funcao2, funcao3, funcao4);
 		administrador.setFuncoes(funcoesAdministrador);
 		manager.persist(administrador);
 		
-		Collection<Funcao> funcoesTeste = Arrays.asList(funcao1, funcao2);
+		List<Funcao> funcoesTeste = Arrays.asList(funcao1, funcao2);
 		teste.setFuncoes(funcoesTeste);
 		manager.persist(teste);
 		
